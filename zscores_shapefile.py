@@ -1,8 +1,6 @@
 '''
 create zscores on the values in one column of a shapefile attribute table, and store in a new column
 
-change filenames and paths as literals if needed
-
 python 3 script
 '''
 
