@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Gaussian KDE of 2021 of xx for England and Wales MSOAs, using scipy
+Gaussian KDE using scipy
+Imports coordinate locations from vector points file 
+Uses optional weights, scalar bandwidth can be changed, and grid resolution via the array / meshgrid dimensions
+Exports gridded results to Geotiff using GDAL
 
-@author: G
+Python 3 script
 """
 
 from scipy import stats
@@ -82,6 +85,3 @@ srs.ImportFromEPSG(27700) # change EPSG here to whatever CRS is needed
 output_raster.SetProjection( srs.ExportToWkt() ) # applies the CRS / SRS as defined above to the geotiff
 output_raster.GetRasterBand(1).WriteArray(z) # write the values calculated in the KDE to band 1 of the output raster
 output_raster.FlushCache()
-
-# the resultant geotiff is rotated 90 degrees clockwise in the wrong direction - fix this
-# the bounds are correct, plus the patterns are correct 
