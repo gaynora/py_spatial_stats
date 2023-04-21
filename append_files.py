@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-append files from multiple in a folder
-csv and excel versions
+append multiple files in a folder into a single file
+csv, excel and spatial vector file versions
+input files must have the same table schema
 """
 
 import pandas as pd
