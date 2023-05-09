@@ -1,4 +1,4 @@
-pip install pandas
-pip install geopandas
-pip install geoplot
-pip install mapclassify
+pip3 install pandas
+pip3 install geopandas
+pip3 install geoplot
+pip3 install mapclassify
