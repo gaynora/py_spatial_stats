@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jul 27 13:39:03 2023
+OGC WFS query and return as geodataframe and vector file
 
 @author: G
 """
