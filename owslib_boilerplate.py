@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-OGC WFS query and return as geodataframe and vector file
+OGC WFS query and return as geodataframe and vector file.
+Notes on versions:
+- WFS 1.1.0 and 2.0.0 return GML3 as the default GML, whereas in WFS 1.0.0, the default is GML2. GML3 adopts marginally different ways of specifying a geometry.
+- WFS 1.1.0 and 2.0.0, SRS specified with urn:x-ogc:def:crs:EPSG:XXXX,  in WFS 1.0.0 the specification was http://www.opengis.net/gml/srs/epsg.xml#XXXX.
+- WFS 1.1.0 and 2.0.0 support on-the-fly reprojection of data, which supports returning the data in a SRS other than the native SRS.
+- WFS 2.0.0 supports joins via a GetFeature request.
+- WFS 2.0.0 supports GetFeature request via startIndex and count parameters.
 
 @author: G
 """
