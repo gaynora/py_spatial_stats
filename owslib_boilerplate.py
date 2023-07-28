@@ -29,7 +29,7 @@ v = wfs.version # fetches the version required as a varying request parameter
 # READ THE DATA INTO GEODATAFRAME:
 layer_name = list(wfs.contents)[-1] # Fetch the last available layer (as an example) 
 params = dict(service='WFS', version=v, request='GetFeature', # Specify the parameters for fetching the data
-      typeName=layer_name, outputFormat='json', count=100, startIndex=0) # outputformat: GML is standard - not all formats may be available per WFS, Count: amount of rows to return, startIndex: offset to start returning rows
+      typeName=layer_name, outputFormat='gml2', count=100, startIndex=0) # outputformat: GML is standard - not all formats may be available per WFS, Count: amount of rows to return, startIndex: offset to start returning rows
 
 wfs_request_url = Request('GET', url, params=params).prepare().url # Parse the URL with parameters
 
@@ -38,13 +38,13 @@ data.to_file('output1.shp')
 
 
 
-#FUNCTIONAL APPROACH
+#FUNCTIONAL APPROACH - USING GML2 FORMAT WHERE AVAILABLE
 def get_wfs(url):
    
     wfs = WebFeatureService(url) # initialise  
     v = wfs.version # fetches the version required as a varying request parameter
     layer_name = list(wfs.contents)[-1] # Fetch the last available layer (as an example)    
-    params = dict(service='WFS', version=v, request='GetFeature', typeName=layer_name, outputFormat='json', count=100, startIndex=0) # Specify the parameters for fetching the data Count: amount of rows to return, startIndex: offset to start returning rows    
+    params = dict(service='WFS', version=v, request='GetFeature', typeName=layer_name, outputFormat='gml2', count=100, startIndex=0) # Specify the parameters for fetching the data Count: amount of rows to return, startIndex: offset to start returning rows    
     wfs_request_url = Request('GET', url, params=params).prepare().url # Parse the URL with parameters    
     wfs_gdf = gpd.read_file(wfs_request_url) # return wfs_request_url
     return wfs_gdf
