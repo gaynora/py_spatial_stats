@@ -6,6 +6,7 @@ Can search on free text, postcode, UPRNs, closet and radius to coord, BBox, geoJ
 Docu on dataset content, query parameters, call methods and return codes at https://osdatahub.os.uk/docs/places/technicalSpecification
 Authentication is required for this API, with keys available from https://osdatahub.os.uk accounts
 Default format response is JSON.
+Python 3 script: limited methods can also be acheived through the osdatahub package, in addition to the requests package.
 author: @gaynora
 """
 
