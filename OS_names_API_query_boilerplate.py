@@ -5,6 +5,7 @@ Search for names of areas, cities, roads, postcodes and named woodlands and fore
 Themes include populated places e.g. cities / transport network e.g. bus stations / landform e.g. coastal headlands / hydrography e.g. bays / landcover e.g. woodland and forests / other e.g. chemical works / 
 Authentication is required for this API, with keys available from https://osdatahub.os.uk accounts
 Default format response is JSON.
+Python 3 script: limited methods can also be acheived through the osdatahub package, in addition to the requests package.
 author: @gaynora
 """
 
