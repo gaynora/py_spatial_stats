@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+Loops through a folder of spatial vector geometries and identifies 
+the filename of files withe invalid geometries
+according to the is_valid geopandas method
+"""
+
+import geopandas as gpd
+import os
+
+# file path  where the inpit files are saved
+source_file_path = r'inputs'
+
+#loop through files in the folder
+for entry in os.listdir(source_file_path): 
+    df=gpd.read_file(source_file_path +"\\"+ entry) #reads file from file path and columns
+# and then records in the files
+    for i, row in df.iterrows():
+        if row[df._geometry_column_name].is_valid == False:
+# and return any invalid geometry records with info
+            print ('invalid geometry on file: ' + entry + ' index :' + str(i))
